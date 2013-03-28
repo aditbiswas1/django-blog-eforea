@@ -1,0 +1,30 @@
+{% extends 'blog\base.html' %}
+
+{% block title %} {{ post.title }} {% endblock %}
+
+{% block content %}
+	<article class="span9">
+		<header>
+			<h1> {{ post.title }}</h1>
+			<p>
+				Posted on
+				<time datetime="{{ post.create|date:"c"}}">
+					{{ post.created|date}}
+				</time>
+			</p>
+		</header>
+
+		<p class="description">
+			{{ post.description }}
+		</p>
+		<div class="span9">
+			{{ post.content|safe}}
+		    </br>
+		    </br>
+		    </br>
+		    </br>
+		</div>
+			
+	</article>
+
+{% endblock %}
